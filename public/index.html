@@ -745,7 +745,9 @@
 </div>
 
 <script>
-  const SERVER = 'http://localhost:3000';
+  const SERVER = window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : window.location.origin;
 
   let token = localStorage.getItem('nex_token') || null;
   let username = localStorage.getItem('nex_username') || null;
